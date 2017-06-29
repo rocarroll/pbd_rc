@@ -20,11 +20,12 @@ def check_word(words,word):
 	
 def check_words(words,senteance):
 	words_to_check = senteance.split(' ')
+	failed_words = []
 	for word in words_to_check:
 		if not check_word(words,word):
 			print ("Word is misspelt : " + word)
-			return False
-	return True
+			failed_words.append(word)
+	return failed_words
 	
 print load_words("spell.words") [0]
 

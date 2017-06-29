@@ -12,11 +12,13 @@ class SpellChecker:
 		
 	def check_words(self, senteance):
 		words_to_check = senteance.split(' ')
+		failed_words = []
 		for word in words_to_check:
 			if not self.check_word(word):
 				print ("Word is misspelt : " + word)
-				return False
-		return True
+				failed_words.append(word)
+		return failed_words
+	
 		
 		
 if __name__== '__main__':
