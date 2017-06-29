@@ -15,12 +15,13 @@ class TestSpellChecker(unittest.TestCase):
 		self.assertEquals(0, len(self.spellChecker.check_words('our first correct sentence')))
 		# handle case sensitivity
 		self.assertEquals(0, len(self.spellChecker.check_words('Our first correct sentence')))
-		# handle full sto
+		# handle full stop
 		self.assertEquals(0, len(self.spellChecker.check_words('Our first correct sentence.')))
 		failed_words = self.spellChecker.check_words('zygotic mistasdas spelllleeeing elementary')
 		self.assertEquals(2, len(failed_words))
 		self.assertEquals('mistasdas', failed_words[0])
 		self.assertEquals('spelllleeeing', failed_words[1])
+		self.assertEquals(0, len(self.spellChecker.check_document('spell.words')))
 
 		
 		
